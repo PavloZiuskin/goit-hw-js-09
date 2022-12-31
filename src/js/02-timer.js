@@ -1,4 +1,5 @@
 import flatpickr from 'flatpickr';
+import Notiflix from 'notiflix';
 
 const input = document.querySelector('#datetime-picker');
 
@@ -27,7 +28,7 @@ const options = {
     if (selectDay > nowDay) {
       refs.btnStart.disabled = false;
     } else if (selectDay <= nowDay) {
-      alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
     }
   },
 };
